@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: ms-agend-schedule
+    version: 1.0
+    description: none
+  activemq:
+    broker-url: tcp://amq-agendamento-eletron-desenv-tcp.amq-agendamento-eletron-desenv.svc:61616?jms.prefetchPolicy.queuePrefetch=1
+    user: userPjg
+    password: 34B1bTyY
+    close-timeout: 600000
+fixedDelay:
+   milliseconds: 30000
+queue.sms: medical.care.sms.queue
+queue.push: medical.care.push.queue
+
+database:
+  cofreId: 3282
+  url: jdbc:postgresql://provppd.chiusyo6mhnj.sa-east-1.rds.amazonaws.com:5432/provppd
+  className: org.postgresql.Driver
+  connectionTestQuery: 'SELECT 1'
+  connectionTimeout: 20000
+  maxLifetime: 600000
+  maxPoolSize: 5
+  packageName: br.com.sulamerica.susis.agendamento.model
+br.sulamerica.cofresenha.oauth-request-cofres.1:
+  id: 3378
+  url: https://acessourgente.sulamerica.br/iso/coe/senha/3378?
+  consumerKey: 9011d8c8c7debfd329f1f6a1522a88cd05c3cef6a
+  consumerSecret: 481a84869fce128323fa1f1e3450657c
+  accessToken: 0052b08561d0cb27903aa6ea5d22154d05c3cef6a
+  access-token-secret: 52947a143cbfdb71640d3d11e6a0525a
+server:
+  port: 8080  
+spring.jpa:
+  jpa:
+  database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+  properties:
+    hibernate: 
+      temp.use_jdbc_metadata_defaults: false
+      enable_lazy_load_no_trans: true

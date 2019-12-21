@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: poc-jms-java
+    version: 1.0
+    description: none
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: 
+    password: 
+    close-timeout: 600000
+fixedDelay:
+   milliseconds: 60000
+queue.email: email.queue
+
